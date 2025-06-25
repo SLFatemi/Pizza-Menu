@@ -1,13 +1,12 @@
 function Pizza(props) {
-    console.log(props)
-    return <div className={'pizza'}>
-        <img src={props.img} alt={props.name}/>
+    return <li className={'pizza'}>
+        <img src={`/src/assets/${props.pizzaObject.photoName}`} alt={props.pizzaObject.name}/>
         <div>
-            <h3>{props.name}</h3>
-            <p>{props.ing}</p>
-            <span>{props.price}</span>
+            <h3>{props.pizzaObject.name}</h3>
+            <p>{props.pizzaObject.ingredients}</p>
+            <span>{props.pizzaObject.price}</span>
         </div>
-    </div>
+    </li>
 }
 
 export default Pizza
