@@ -1,3 +1,5 @@
+import OrderButton from "./OrderButton.jsx";
+
 function Footer() {
     const curTime = new Date().toLocaleTimeString()
 
@@ -7,13 +9,14 @@ function Footer() {
 
     let isOpen
     isOpen = (hour >= openHour && hour <= closeHour);
-
-
-    // return <footer className={'footer'}>{curTime} We are currently {isOpen ? 'open' : 'closed'}!</footer>
+    
     return <div className={'order'}>
         <footer
-            className={'footer'}>{isOpen && `We are currently open! until ${closeHour}:00, Come visit us or order online.`}</footer>
-        <button className={'btn'}>Order</button>
+            className={'footer'}>{isOpen
+            ? `We are currently open! until ${closeHour}:00, Come visit us or order online.`
+            : `We're happy to welcome you between ${openHour}:00 to ${closeHour}:00`}
+        </footer>
+        {isOpen ? <OrderButton/> : null}
     </div>
 }
 

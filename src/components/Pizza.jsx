@@ -1,10 +1,10 @@
-function Pizza(props) {
-    return <li className={'pizza'}>
-        <img src={`/src/assets/${props.pizzaObject.photoName}`} alt={props.pizzaObject.name}/>
+function Pizza({pizzaObject}) {
+    return <li className={`pizza ${pizzaObject.soldOut ? 'sold-out' : ''}`}>
+        <img src={`/src/assets/${pizzaObject.photoName}`} alt={pizzaObject.name}/>
         <div>
-            <h3>{props.pizzaObject.name}</h3>
-            <p>{props.pizzaObject.ingredients}</p>
-            <span>{props.pizzaObject.price}</span>
+            <h3>{pizzaObject.name}</h3>
+            <p>{pizzaObject.ingredients}</p>
+            <span>{pizzaObject.price}</span>
         </div>
     </li>
 }

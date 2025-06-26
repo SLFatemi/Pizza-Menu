@@ -7,13 +7,13 @@ function Menu() {
     return <main className={'menu'}>
         <h2>Our Menu</h2>
 
-        {isTherePizza && <ul className={'pizzas'}>
+        {isTherePizza ? <ul className={'pizzas'}>
             {pizzaData.map(pizza => {
                 return (
                     <Pizza pizzaObject={pizza} key={pizza.name}/>
                 )
             })}
-        </ul>}
+        </ul> : 'We are still working on our menu, Please come back later!'}
 
     </main>
 }
